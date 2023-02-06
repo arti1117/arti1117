@@ -1,4 +1,4 @@
-- 👋 Hi, I’m JAEYEONG [Blog](https://arti1117.github.io)
+- 👋 Hi, I’m JAEYEONG [Portfolio](https://arti1117.github.io)
 - 👀 I’m interested in computer vision
 - 🌱 I’m currently learning machine learning
 
