@@ -1,4 +1,4 @@
-- 👋 Hi, I’m JAEYEONG [Page](https://arti1117.github.io)
+- 👋 Hi, I’m JAEYEONG <a href="https://arti1117.github.io/" target="_blank">Page</a>
 - 👀 I’m interested in AI, Robot, Space
 - 🌱 I’m currently making Self-Driving RC Car
 
