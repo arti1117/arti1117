@@ -1,5 +1,5 @@
 - 👋 Hi, I’m JAEYEONG [Page](https://arti1117.github.io)
-- 👀 I’m interested in AI, Robot, Space
+- 👀 I’m interested in AI, Robot, Universe
 - 🌱 I’m currently making Self-Driving RC Car
 
 <!---
