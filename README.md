@@ -1,4 +1,4 @@
-### Jaeyeong Choi — Reliability Architect for Autonomous Systems
+### Jaeyeong Choi — Backend / Reliability Engineer (pivoting to autonomous-systems reliability)
 
 결제 인프라에서 쌓은 신뢰성·상태 정합성을 **자율 시스템(로봇 fleet)**으로 옮기고 있습니다.
 연 4조원·100만+ 이용자 규모의 해외송금 인프라에서 이종 시스템 상태 정합성과 24/7 운영 신뢰성을 6년간 다뤘고, 지금은 그 경험을 fleet 오케스트레이션·컨트롤 플레인으로 확장합니다.
