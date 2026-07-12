@@ -9,6 +9,8 @@
 - 🛰️ [fleet-master-controller](https://github.com/arti1117/fleet-master-controller) — 로봇 fleet(VDA5050)용 감사 로그·결정적 재현 레이어 · Go
 - 🧭 [sentinel-systems](https://github.com/arti1117/sentinel-systems) — 자율 시스템 B2B 관제·운영 인프라 설계
 
+**이력** · [RESUME.md](./RESUME.md) — 경력·프로젝트·기술 역량
+
 **글** · [arti1117.github.io](https://arti1117.github.io) — 결제에서 자율 시스템까지, 신뢰성을 설계로 푸는 과정 기록. 비슷한 문제로 막혀 있다면 편하게 말 걸어 주세요.
 
 **스택** · Go · C#/.NET · Python · MSSQL · Redis · MQTT
