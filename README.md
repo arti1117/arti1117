@@ -9,7 +9,9 @@
 
 **플래그십**
 - 🛰️ [fleet-master-controller](https://github.com/arti1117/fleet-master-controller) — 로봇 fleet(VDA5050)용 감사 로그·결정적 재현 레이어 · Go
-- 🧭 [sentinel-systems](https://github.com/arti1117/sentinel-systems) — 자율 시스템 B2B 관제·운영 인프라 설계
+
+**리서치·문서**
+- 🧭 [sentinel-systems](https://github.com/arti1117/sentinel-systems) — 자율 시스템 관제·운영 리서치와 학습 문서 모음 (문서 전용, 코드 없음)
 
 **이력** · [RESUME.md](./RESUME.md) — 경력·프로젝트·기술 역량 · [LinkedIn](https://www.linkedin.com/in/jaeyeong-choi-561058341/)
 
