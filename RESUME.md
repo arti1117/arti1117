@@ -13,7 +13,7 @@
 
 ## 경력
 
-### 글로벌머니익스프레스 · Senior Backend Engineer — 2020.03–현재
+### 글로벌머니익스프레스 · Backend Engineer — 2020.03–현재
 
 해외송금 핀테크(연 4조원·100만+ 이용자) · 24/7 무중단 결제 인프라의 상태 정합성·장애 복구·외부 시스템 통합 담당
 
@@ -32,8 +32,8 @@
 
 ## 프로젝트
 
-- **F1TENTH Korea Championship 2025** — ROS2 기반 1:10 자율주행, 시뮬→실차 파이프라인. 다중 에이전트 command/state·실패 처리·동시성 관점에서 기여, 예선 통과.
-- **Gugudan AI Server** — FastAPI 기반 AI 상담 백엔드의 인증 도메인(OAuth2·JWT·세션) 전담, Hexagonal 아키텍처 분리.
+- **F1TENTH Korea Championship 2025** — ROS2 기반 1:10 자율주행. 팀 프로젝트에 참여(실차 빌드·현장 운용), 예선 통과.
+- **Gugudan AI Server** — FastAPI 기반 AI 상담 백엔드. 학습 목적 팀 프로젝트에 참여(SSO 로그인 라우팅·Account/Auth 분리).
 
 ## 기술 역량
 
