@@ -8,7 +8,7 @@
 **관심** · 이종 시스템 상태 정합성 · 정확 1회(exactly-once) · 감사 로그·결정적 재현 · fleet 컨트롤 플레인
 
 **플래그십**
-- 🛰️ [fleet-master-controller](https://github.com/arti1117/fleet-master-controller) — 로봇 fleet(VDA5050)용 감사 로그·결정적 재현 레이어 · Go
+- 🛰️ [fleet-master-controller](https://github.com/arti1117/fleet-master-controller) — 로봇 fleet(VDA5050)용 감사 로그·결정적 재현 레이어 · Go · **AI 보조 학습 프로젝트**
 
 **리서치·문서**
 - 🧭 [sentinel-systems](https://github.com/arti1117/sentinel-systems) — 자율 시스템 관제·운영 리서치와 학습 문서 모음 (문서 전용, 코드 없음)
