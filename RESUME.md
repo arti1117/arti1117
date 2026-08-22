@@ -1,54 +1,59 @@
-# 이력 — 최재영 (Jaeyeong Choi)
+<!-- Published resume snapshot: 2026-08-22 -->
 
-> 완료한 것만 담백하게 기록합니다. 진행 중인 작업은 [블로그 프로젝트 페이지](https://arti1117.github.io/projects/)에 있습니다.
+# 최재영 (Jaeyeong Choi)
 
-**Backend / Reliability Engineer** · 인공지능 로봇·자율 시스템 fleet의 신뢰성 (Control-Plane & Fleet Orchestration)
-결제 인프라 운영 신뢰성 · 상태 정합성
+**백엔드 개발자 · 외부 연동·상태 정합성·장애 복구**
 
-[GitHub](https://github.com/arti1117) · [LinkedIn](https://www.linkedin.com/in/jaeyeong-choi-561058341/) · Darkmoonz1004@gmail.com · 서울
+관심 분야: 로봇 fleet 백엔드의 작업 상태 정합성과 장애 복구
 
-## Summary
-
-연 4조원·100만+ 이용자 규모의 해외송금 인프라에서 이종 시스템 간 상태 정합성과 24/7 운영 신뢰성을 6년간 담당했습니다. 대규모 트랜잭션을 멱등성·dedup으로 exactly-once 효과로 처리하며 장애 복구, 중복 실행 차단, 이종 시스템 간 상태 드리프트 정정을 다뤘습니다. 현재 이 신뢰성·정합성 경험을 로봇 fleet 오케스트레이션·컨트롤 플레인으로 확장하고 있습니다.
-
-## 경력
-
-### 글로벌머니익스프레스 · Backend Engineer — 2020.03–현재
-
-해외송금 핀테크(연 4조원·100만+ 이용자) · 24/7 무중단 결제 인프라의 상태 정합성·장애 복구·외부 시스템 통합 담당
-
-- 오픈뱅킹 인증 시스템을 단일 상태기계로 설계·구축·운영, 송금 트래픽 대부분을 무중단 처리. 외부 중계 의존 → 자체 통제 구조로 전면 전환.
-- 이기종 시스템 간 상태 정합성 약 10배+ 개선 — 거래 규칙 기반 멱등성으로 불일치 원천 차단 + 잔여분 탐지·라우팅.
-- 결제 채널의 중복 처리(double-processing) incident를 멱등성 기반 단일 처리로 차단해 exactly-once 효과를 정착, 후속 유사 건의 표준 대응 모델로 확립.
-- 운영 incident 대응 체계 확립 — 채널 차단·복구 판단, RCA·운영 프로토콜 문서화, 신규 입사자 멘토링.
-- 사후 대사 *이전*에 누락·지연을 차단하는 사전 검증 자동화(toil 제거).
-- 이기종 외부 시스템 100개+ 통합, 사내 8개+ 부서 조정.
-
-스택: C# · .NET · MSSQL T-SQL · Redis · CI/CD
-
-### TOYO System (日本) · 시스템 엔지니어 — 2018.02–2019.09
-
-물류·제조 자동화(SCM·스마트팩토리) 도메인. Bridgestone Group SCM 플랫폼 연계, 물류·결제 시스템 개발·운영.
-
-## 프로젝트
-
-- **F1TENTH Korea Championship 2025** — ROS2 기반 1:10 자율주행. 팀 프로젝트에 참여(실차 빌드·현장 운용), 예선 통과.
-- **Gugudan AI Server** — FastAPI 기반 AI 상담 백엔드. 학습 목적 팀 프로젝트에 참여(SSO 로그인 라우팅·Account/Auth 분리).
-
-## 기술 역량
-
-- **운영 신뢰성·정합성** — 상태 정합성·reconciliation, 멱등성·dedup(exactly-once), 24/7 무중단 운영, 장애 대응·RCA, 관측성, 무중단 마이그레이션
-- **언어·백엔드** — C# / .NET, MSSQL T-SQL, Python · FastAPI · Go(학습 중)
-- **인프라·메시징** — MQTT, RabbitMQ, Redis, Docker, CI/CD (GitLab Runner · Jenkins)
-- **언어** — 한국어(원어민) · 일본어(실무) · 영어(TOEIC 820) · 중국어(HSK 5급)
-
-## 교육
-
-- 동국대학교 중어중문학과(복수전공 경영학) · 상해외국어대학 교환학생
-- NIPA-Google ML 부트캠프 · AI Multi-Agent 서비스 실전프로젝트 · Deep Learning Specialization (Coursera)
+Darkmoonz1004@gmail.com · [GitHub](https://github.com/arti1117) · [LinkedIn](https://www.linkedin.com/in/jaeyeong-choi-561058341/) · [기술 블로그](https://arti1117.github.io) · 서울
 
 ---
 
-## English Summary
+## 소개
 
-Backend / Reliability Engineer focused on the reliability of autonomous-system fleets (control-plane & orchestration). Six years owning state consistency and 24/7 operational reliability on a remittance platform handling roughly ₩4T/year and 1M+ users — exactly-once effects via idempotency/dedup, failure recovery, and cross-system state-drift correction. Now extending that reliability experience to robot-fleet orchestration and control planes.
+2018년부터 시스템 개발자로 일했고, 2020년부터 C#과 MSSQL 기반의 해외송금 백엔드를 개발하고 운영하고 있다. 오픈뱅킹 자체인증 전환, 외부 시스템의 부분 실패 처리, 중복 처리 복구와 데이터 이관 검증을 다뤘다.
+
+문제가 생기면 먼저 영향 범위를 줄이고 원인을 확인한 뒤 코드와 운영 절차를 고친다. 복구할 때는 원본 기록을 보존하고, 상쇄 내역과 최종 산출물의 대사로 결과를 확인한다.
+
+## 경력
+
+### 글로벌머니익스프레스 — 해외송금 백엔드 개발·운영
+
+2020.03–현재 · 결제·정산·인증 · 국내 파트너 연동
+
+**역할:** 2024년 이슈·유지보수 전담 조직 리드 · 2025년 개발팀 리드
+
+- 오픈뱅킹 자체인증 전환의 서버 기능을 개발하고, API 시나리오와 DB·서버·웹 배포 절차를 정리해 운영 전환을 수행했다.
+- 회계 데이터 아카이빙을 설계·구현했다. 원본을 보존하고 표본 거래를 교차 확인한 뒤, 신구 구조의 회계·운영 보고서를 비교해 이관 결과를 검증했다.
+- 중복 처리 문제의 발생 경로를 팀과 함께 분석하고, 복구 대상 산출 쿼리와 상쇄 처리를 구현·배포했다. 원 기록을 지우지 않고 잔액을 동기화한 뒤 최종 대사까지 수행했다.
+- 분산된 결제·상품 이벤트 로그를 원장·재고·통합 이력 구조로 이관했다. 이벤트 순서로 잔액을 재계산하고 발급·취소·사용 로그에서 최종 상태를 역산했으며, 백필용 임시 상관키는 이관 후 제거했다.
+- 외부 이체 연동 전환 시 서버 진입 경로와 실패 시나리오를 점검하고, 검증된 조건에서만 처리되도록 전환 로직을 보완했다. 정상·실패 시나리오와 부분 배포에서도 차단 조건이 유지되는지를 사전 확인한 뒤 배포 여부를 결정했다.
+
+### TOYO System (株式会社 東洋システム) — 시스템 엔지니어
+
+2018.02–2019.09 · 일본 도쿄
+
+- C#·VB.NET과 MSSQL·Oracle 기반 고객사 시스템 개발과 운영에 참여했다.
+- 제조·물류 분야의 솔루션 연계와 RPA 자동화 PoC에 참여했다.
+
+## 관심 분야와 관련 학습
+
+업무와 병행해 2021년 딥러닝, 2022년 빅데이터 분석, 2025~2026년 ML·AI 서비스와 자율주행 실차 활동을 경험했다. 이 경험을 바탕으로 데이터·AI와 로보틱스에 대한 관심을 로봇 fleet 백엔드로 구체화하고 있다.
+
+- DeepLearning.AI의 Deep Learning Specialization 5개 과정(2021.08)을 수료했다. 한국데이터산업진흥원 빅데이터 분석 전문가 37기(2022.06–08)에서는 `FIFA 등록 축구선수 이적료 예측` 팀 프로젝트로 우수 프로젝트 팀에 선정됐다.
+- NIPA-Google ML 부트캠프 협력 실무 프로젝트 2단계(120시간, 2025.09–11)를 수료했다.
+- 재직자 AI Multi-Agent 서비스 실전프로젝트(180시간, 2025.11–2026.01)의 6인 팀 [Gugudan AI Server](https://github.com/keaunsolNa/gugudan-ai-server) 프로젝트에 참여해 FastAPI 기반 Google·Kakao·Naver SSO 로그인 라우팅, CSRF 검증과 Account/Auth 도메인 분리를 구현했고 과정 최우수상을 받았다.
+- F1TENTH Korea Championship 2025에 팀원으로 참가해 1:10 자율주행 미니카의 실차 빌드와 현장 운용을 경험했다.
+
+## 기술
+
+- **실무:** C# · .NET Framework · MSSQL/T-SQL · Redis · RabbitMQ
+- **학습·팀 프로젝트:** Python · FastAPI · SQLAlchemy · Docker
+- **언어:** 한국어(원어민) · 일본어(실무) · 영어(TOEIC 820, 2016) · 중국어(HSK 5급, 2016)
+
+## 교육·자격
+
+- 동국대학교 경주캠퍼스 중어중문학과 · 경영학 복수전공 · 2011.03–2017.02
+- 상해외국어대학 교환학생 · 2015.09–2016.06
+- 정보처리기사 · 2017

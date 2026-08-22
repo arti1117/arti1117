@@ -1,23 +1,20 @@
 ## Jaeyeong Choi
 
-**Backend / Reliability Engineer** · pivoting to autonomous-systems reliability
+**Backend Developer** · C#/.NET · MSSQL
 
-결제 인프라에서 쌓은 신뢰성·상태 정합성을 **자율 시스템(로봇 fleet)**으로 옮기고 있습니다.
-연 4조원·100만+ 이용자 규모의 해외송금 인프라에서 이종 시스템 상태 정합성과 24/7 운영 신뢰성을 6년간 다뤘고, 지금은 그 경험을 fleet 오케스트레이션·컨트롤 플레인으로 확장합니다.
+결제·정산 시스템에서 외부 연동, 거래 상태 불일치, 장애 후 데이터 복구를 다뤄 온 백엔드 개발자입니다. 문제가 생기면 영향 범위를 먼저 줄이고 원인을 확인한 뒤, 코드와 운영 절차를 고치고 데이터 대사로 복구 결과를 확인합니다.
 
-**관심** · 이종 시스템 상태 정합성 · 정확 1회(exactly-once) · 감사 로그·결정적 재현 · fleet 컨트롤 플레인
+현재는 이 경험을 살릴 수 있는 백엔드 개발자 포지션을 찾고 있습니다. 로봇 fleet 백엔드의 작업 상태 정합성과 장애 복구에도 관심을 두고 있습니다.
 
-**플래그십**
-- 🛰️ [fleet-master-controller](https://github.com/arti1117/fleet-master-controller) — 로봇 fleet(VDA5050)용 감사 로그·결정적 재현 레이어 · Go · **AI 보조 학습 프로젝트**
+업무와 병행해 2021년 딥러닝, 2022년 빅데이터 분석, 2025~2026년 ML·AI 서비스 교육과 F1TENTH 실차 활동을 경험했습니다.
 
-**리서치·문서**
-- 🧭 [sentinel-systems](https://github.com/arti1117/sentinel-systems) — 자율 시스템 관제·운영 리서치와 학습 문서 모음 (문서 전용, 코드 없음)
+**이력서** · [RESUME.md](./RESUME.md) · [LinkedIn](https://www.linkedin.com/in/jaeyeong-choi-561058341/)
 
-**이력** · [RESUME.md](./RESUME.md) — 경력·프로젝트·기술 역량 · [LinkedIn](https://www.linkedin.com/in/jaeyeong-choi-561058341/)
+**기술 블로그** · [arti1117.github.io](https://arti1117.github.io) — 결제·정산 백엔드에서 배운 상태 정합성과 장애 복구를 일반화해 기록합니다.
 
-**글** · [arti1117.github.io](https://arti1117.github.io) — 결제에서 자율 시스템까지, 신뢰성을 설계로 푸는 과정 기록. 비슷한 문제로 막혀 있다면 편하게 말 걸어 주세요.
+**실무 기술** · C# · .NET Framework · MSSQL/T-SQL · Redis · RabbitMQ
 
-**스택** · Go · C#/.NET · Python · MSSQL · Redis · MQTT
+**학습·팀 프로젝트** · Python · FastAPI · SQLAlchemy · Docker
 
 <!---
 arti1117/arti1117 is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
