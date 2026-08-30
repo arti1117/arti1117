@@ -1,4 +1,4 @@
-<!-- Published resume snapshot: 2026-08-22 -->
+<!-- Published resume snapshot: 2026-08-22; factual-boundary corrections: 2026-08-30 -->
 
 # 최재영 (Jaeyeong Choi)
 
@@ -39,12 +39,12 @@ Darkmoonz1004@gmail.com · [GitHub](https://github.com/arti1117) · [LinkedIn](h
 
 ## 관심 분야와 관련 학습
 
-업무와 병행해 2021년 딥러닝, 2022년 빅데이터 분석, 2025~2026년 ML·AI 서비스와 자율주행 실차 활동을 경험했다. 이 경험을 바탕으로 데이터·AI와 로보틱스에 대한 관심을 로봇 fleet 백엔드로 구체화하고 있다.
+업무와 병행해 2021년 딥러닝, 2022년 빅데이터 분석, 2025~2026년 ML·AI 서비스 교육에 참여했고 F1TENTH Korea Championship 2025에 팀원으로 참가했다. 이 경험을 바탕으로 데이터·AI와 로보틱스에 대한 관심을 로봇 fleet 백엔드로 구체화하고 있다.
 
-- DeepLearning.AI의 Deep Learning Specialization 5개 과정(2021.08)을 수료했다. 한국데이터산업진흥원 빅데이터 분석 전문가 37기(2022.06–08)에서는 `FIFA 등록 축구선수 이적료 예측` 팀 프로젝트로 우수 프로젝트 팀에 선정됐다.
+- DeepLearning.AI의 Deep Learning Specialization 5개 과정(2021.08)을 수료했다. 한국데이터산업진흥원 빅데이터 아카데미 빅데이터 분석 전문가 37기(2022.06–08)에서는 `FIFA 등록 축구선수 이적료 예측` 팀 프로젝트로 우수 프로젝트 팀에 선정됐다.
 - NIPA-Google ML 부트캠프 협력 실무 프로젝트 2단계(120시간, 2025.09–11)를 수료했다.
-- 재직자 AI Multi-Agent 서비스 실전프로젝트(180시간, 2025.11–2026.01)의 6인 팀 [Gugudan AI Server](https://github.com/keaunsolNa/gugudan-ai-server) 프로젝트에 참여해 FastAPI 기반 Google·Kakao·Naver SSO 로그인 라우팅, CSRF 검증과 Account/Auth 도메인 분리를 구현했고 과정 최우수상을 받았다.
-- F1TENTH Korea Championship 2025에 팀원으로 참가해 1:10 자율주행 미니카의 실차 빌드와 현장 운용을 경험했다.
+- 재직자 AI Multi-Agent 서비스 실전프로젝트 1회차(180시간, 2025.11–2026.01)의 [Gugudan AI Server](https://github.com/keaunsolNa/gugudan-ai-server) 프로젝트에 참여해 FastAPI 기반 Google·Kakao·Naver SSO 로그인 라우팅, CSRF 검증과 Account/Auth 도메인 분리를 구현했고 최우수상을 받았다.
+- F1TENTH Korea Championship 2025에 팀원으로 참가했다.
 
 ## 기술
 
