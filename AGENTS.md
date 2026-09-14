@@ -14,3 +14,7 @@ JY's GitHub profile repo — `README.md` renders on `github.com/arti1117` (GitHu
 ## Sibling learning repositories
 
 `fleet-master-controller` and `sentinel-systems` remain sibling learning and research repositories, but they are not current profile flagships. Do not promote them on the profile without a new JY decision. Read each repository's `AGENTS.md` and `README.md` before changing it.
+
+## File placement (MECE, 2026-09-13)
+
+All three files have distinct responsibilities: `README.md` is the GitHub profile entry point, `RESUME.md` is the approved public resume snapshot, and `AGENTS.md` contains contributor instructions. Keep these at the root because their locations are part of the public profile contract. Private drafts, career planning, certificates, and source photos belong in `../arti1117.private/`; blog posts and learning notes belong in their respective blog repositories. File organization does not approve a new public career statement or synchronize private material.
