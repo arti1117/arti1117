@@ -8,7 +8,9 @@
 
 업무와 병행해 2021년 딥러닝, 2022년 빅데이터 분석, 2025~2026년 ML·AI 서비스 교육에 참여했고 F1TENTH Korea Championship 2025에 팀원으로 참가했습니다.
 
-**이력서** · [RESUME.md](./RESUME.md) · [LinkedIn](https://www.linkedin.com/in/jaeyeong-choi-561058341/)
+**포트폴리오** · [프로젝트 소개·검증 범위](PORTFOLIO.md)
+
+**이력서** · [RESUME.md](RESUME.md) · [LinkedIn](https://www.linkedin.com/in/jaeyeong-choi-561058341/)
 
 **기술 블로그** · [arti1117.github.io](https://arti1117.github.io) — 결제·정산 백엔드에서 배운 상태 정합성과 장애 복구를 일반화해 기록합니다.
 
