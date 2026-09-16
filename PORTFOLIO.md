@@ -2,7 +2,7 @@
 
 [프로필](README.md) · [이력서](RESUME.md) · [기술 블로그](https://arti1117.github.io)
 
-결제 인프라에서 다뤄 온 신뢰성 문제 — 상태 정합성, 정확 1회(exactly-once), 감사 가능성(auditability), 장애 복구 — 가 로봇 fleet 제어에서도 같은 모양으로 나타나는지를 코드와 설계로 검증하는 공개 학습 기록입니다.
+결제 인프라에서 다뤄 온 신뢰성 문제 — 상태 정합성, 정확 1회(exactly-once), 감사 가능성, 장애 복구 — 가 로봇 fleet 제어에서도 같은 모양으로 나타나는지를 코드와 설계로 검증하는 공개 학습 기록입니다.
 
 두 저장소는 같은 문제를 두 관점에서 살펴봅니다. `fleet-master-controller`는 신뢰성 보장이 코드에 요구하는 제약을, `sentinel-systems`는 운영자가 시스템을 관측하고 통제하기 위한 조건을 다룹니다.
 
@@ -10,7 +10,7 @@
 
 ## fleet-master-controller — Go 학습·검증
 
-로봇 fleet(VDA5050)을 위한 **감사 로그(audit log)와 결정적 재현(deterministic replay) 레이어**입니다. Go로 작성했고 공개 저장소입니다.
+로봇 fleet(VDA5050)을 위한 **감사 로그와 결정적 재현(deterministic replay) 레이어**입니다.
 
 - 저장소: [github.com/arti1117/fleet-master-controller](https://github.com/arti1117/fleet-master-controller)
 - 언어: Go 1.21 (외부 의존성 없음)
@@ -23,10 +23,10 @@ AI(Claude Code)로 구현한 공개 Go 학습 프로젝트이며, 제가 밝힌 
 ### 저장소에서 검증한 동작과 경계 (`-race` clean)
 
 - **해시 체인 원장 무결성 검사** — 저장된 hash와 `PrevHash`의 불일치(재계산하지 않은 수정·중간 삭제·재배열)를 `Verify`가 탐지하며, 같은 파일이 내구성 있는 WAL(Write-Ahead Log) 역할을 합니다. 다만 신뢰된 외부 checkpoint·서명·MAC이 없어 쓰기 권한을 가진 공격자가 변경 뒤 suffix의 hash를 다시 계산하거나 완전한 suffix를 삭제하면 탐지하지 못합니다. (`internal/ledger`)
-- **내구 커밋 기준 크래시 복구** — 새 프로세스가 WAL에 남은 유효한 완전 레코드에서 할당 상태만 결정적으로 재구성합니다. WAL rollback과 경쟁 writer handoff가 없고 file-backed ledger가 열린 범위에서 성공한 `Append`는 복구 대상임이 보장됩니다. 미완성(torn) tail은 버리고 `fsync` 실패는 결과 불명으로 fail-stop하며, lease·heartbeat 같은 런타임 liveness 상태는 복구하지 않습니다. 현재 kill-9 harness는 clean prefix 재개방만 확인하고 ack된 task 집합과 복구 결과를 대조하지 않습니다. (`internal/recovery`)
+- **내구 커밋 기준 크래시 복구** — 새 프로세스가 WAL에 남은 유효한 완전 레코드에서 할당 상태만 결정적으로 재구성합니다. WAL rollback과 경쟁 writer handoff가 없고 file-backed ledger가 열린 범위에서 성공한 `Append`는 복구 대상임이 보장됩니다. 미완성(torn) tail은 버리고 `fsync` 실패는 결과 불명으로 fail-stop하며 lease·heartbeat 같은 런타임 liveness 상태는 복구하지 않습니다. 현재 kill-9 harness는 clean prefix 재개방만 확인하고 ack된 task 집합과 복구 결과를 대조하지 않습니다. (`internal/recovery`)
 - **명령 확인 상태 추적(command-confirmation accountability)** — 원장에 기록된 issued order와 로봇 state report를 대조해 수용 **확인 상태**를 `ACCEPTED / PENDING / STALLED / UNOBSERVED`로 분류합니다. 이는 보고된 확인 상태를 증명하며 로봇 내부 의도나 물리 실행을 증명하지는 않습니다. 결제 시스템의 정산 대사(reconciliation, 보낸 지시 vs 확인 응답)와 같은 구조입니다. (`internal/reconcile`)
 - **단일 소유 이벤트 루프 (P1, 2026-07 저장소 동작 검증)** — 한 `Core` 인스턴스 안에서 fleet 상태 연산을 owner goroutine 하나가 순차 실행합니다(락 없음). 수용 테스트: 16개 racer × 100개 작업 = 1,600개 goroutine 경합에서 작업마다 승자는 정확히 하나, `-race` clean. 다만 현재 `state`는 package-scope 타입이고 포인터가 연산 closure에 전달되므로, 다른 코드의 접근 불가능성까지 컴파일러가 강제한다고 보지는 않습니다. 같은 ledger 위에 여러 `Core`를 여는 것도 API가 막지 않습니다. (`internal/fleet`)
-- **로봇 이탈 재할당과 fencing (P4, 2026-07 저장소 동작 검증)** — lease 만료(또는 suspect grace) 뒤 적격 target이 있으면 현재 grant를 재할당하고, 그 원장 index를 epoch로 사용해 살아 있는 grant와 맞지 않는 완료를 거부·기록합니다. 적격 target이 없으면 `Stranded`, 이미 끝난 task의 늦은 보고는 `ErrUnknownTask`(fence 기록 없음)이며, epoch 비재사용은 WAL이 rollback되지 않은 범위에서만 성립합니다. 연결/last-will은 현재 `ReportDisconnect` 입력으로만 모델링됐고 실제 MQTT 수신은 아직 없습니다. (`internal/fleet`, `internal/reassign`)
+- **로봇 이탈 재할당과 fencing (P4, 2026-07 저장소 동작 검증)** — lease 만료(또는 suspect grace) 뒤 적격 target이 있으면 현재 grant를 재할당하고 그 원장 index를 epoch로 사용해 살아 있는 grant와 맞지 않는 완료를 거부·기록합니다. 적격 target이 없으면 `Stranded`, 이미 끝난 task의 늦은 보고는 `ErrUnknownTask`(fence 기록 없음)이며, epoch 비재사용은 WAL이 rollback되지 않은 범위에서만 성립합니다. 연결/last-will은 현재 `ReportDisconnect` 입력으로만 모델링됐고 실제 MQTT 수신은 아직 없습니다. (`internal/fleet`, `internal/reassign`)
 
 **내구성 전제:** file-backed `Ledger`가 `Core`보다 오래 살아 있어야 합니다. 현재 코드는 이 종료 순서를 강제하지 않아 ledger를 먼저 닫으면 이후 `Append`가 메모리 성공으로 퇴행합니다. `Open`도 lock 전에 파일을 읽어 writer handoff 중 stale replay/truncate가 가능한 미해결 경계가 있습니다. P4 fencing은 컨트롤러 상태 평면의 보장이며 로봇의 물리 동작을 멈추지 않습니다.
 
@@ -41,11 +41,11 @@ AI(Claude Code)로 구현한 공개 Go 학습 프로젝트이며, 제가 밝힌 
 
 ## sentinel-systems — operator
 
-같은 문제를 **운영자의 시선**에서 탐색하는 설계·리서치 저장소입니다. fleet 제어 시스템을 현장에서 어떻게 관측(observability)하고, 장애에 어떻게 대응하며, 무엇을 근거로 신뢰를 보장하는가 — 운영·관측 평면(ops/observability plane)을 다룹니다.
+같은 문제를 **운영자의 시선**에서 탐색하는 설계·리서치 저장소입니다. fleet 제어 시스템을 현장에서 어떻게 관측하고 장애에 어떻게 대응하며 무엇을 근거로 신뢰를 보장하는가 — 운영·관측 평면(ops/observability plane)을 다룹니다.
 
 > 불확실하고 위험한 기술을, 인간이 통제 가능한 시스템으로 전환한다.
 
-자율주행·로보틱스·AI 같은 고위험 자율 제어 기술을 현장에서 통제·운용하기 위한 **B2B 관제 인프라**의 설계입니다. 화려한 알고리즘이 아니라, 운영자가 매일 겪는 *운영의 고통* — 원인 모를 장애, 설정의 복잡성, 사고 원인 파악의 어려움 — 을 풀려 합니다. 세 축:
+자율주행·로보틱스·AI 같은 고위험 자율 제어 기술을 현장에서 통제·운용하기 위한 **B2B 관제 인프라**의 설계입니다. 화려한 알고리즘이 목표는 아닙니다. 운영자가 매일 겪는 운영의 고통 — 원인 모를 장애, 설정의 복잡성, 사고 원인 파악의 어려움 — 을 풀려 합니다. 세 축:
 
 - **구조적 투명성** — 일관된 로그·지표로 설명 가능한 로직
 - **현장 운영 최적화** — 'Zero-Config'을 지향하는 현장 친화적 관제 툴
@@ -54,7 +54,7 @@ AI(Claude Code)로 구현한 공개 Go 학습 프로젝트이며, 제가 밝힌 
 - 저장소: [github.com/arti1117/sentinel-systems](https://github.com/arti1117/sentinel-systems)
 - 현재 단계: 시장 리서치·시스템 분석·설계 문서 (코드 구현 전 — fleet-master-controller의 신뢰성 작업과 함께 진행)
 
-> 코드로 보장을 검증하는 관점과 운영 조건을 설계하는 관점은 별개의 두 시스템이 아니라, *하나의 스택을 두 평면에서 본 것*입니다.
+> 코드로 보장을 검증하는 관점과 운영 조건을 설계하는 관점은 별개의 두 시스템이 아니라, 하나의 스택을 두 평면에서 본 것입니다.
 
 ---
 
