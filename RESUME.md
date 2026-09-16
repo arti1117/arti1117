@@ -1,4 +1,4 @@
-<!-- Published resume snapshot: 2026-08-22; factual-boundary corrections: 2026-08-30 -->
+<!-- Published resume snapshot: 2026-08-22; factual-boundary corrections: 2026-08-30. Derived from private v11; updates require JY approval and manual publication, never automatic synchronization. -->
 
 # 최재영 (Jaeyeong Choi)
 
